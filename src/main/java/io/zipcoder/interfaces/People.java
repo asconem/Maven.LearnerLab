@@ -45,7 +45,7 @@ public abstract class People<E extends Person>{
 
     public abstract E[] getArray();
 
-    public Object[] toArray() {
-        return personList.toArray();
+    public List<E> getPersonList() {
+        return personList;
     }
 }

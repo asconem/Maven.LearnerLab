@@ -1,8 +1,13 @@
 package io.zipcoder.interfaces;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestPeople {
+
+    private static Student newStudent1 = new Student(10, "Steve");;
+    Student newStudent2 = new Student(12, "Jack");
+    static People<Student> students;
 
     @Test
     public void testAdd() {
