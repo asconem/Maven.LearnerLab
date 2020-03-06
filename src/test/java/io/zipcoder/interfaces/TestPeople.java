@@ -1,19 +1,47 @@
 package io.zipcoder.interfaces;
-
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
-public class TestPeople {
+import java.util.ArrayList;
+import java.util.List;
 
-    private static Student newStudent1 = new Student(10, "Steve");;
-    Student newStudent2 = new Student(12, "Jack");
-    static People<Student> students;
+public class TestPeople {
+    People<Person> personList = new People<>();
 
     @Test
     public void testAdd() {
+        Person person1 = new Person(555, "Steve");
+        Person person2 = new Person(678, "Jack");
 
-    Person person1 = new Person(555, "Steve");
-    Person person2 = new Person(678, "Jack");
+        personList.add(person1);
+        personList.add(person2);
 
+        Assert.assertTrue(personList.contains(person1));
+    }
+
+    @Test
+    public void testRemove() {
+        Person person1 = new Person(555, "Steve");
+        Person person2 = new Person(678, "Jack");
+
+        personList.add(person1);
+        personList.add(person2);
+        personList.removeByPerson(person1);
+
+        Assert.assertTrue(!personList.contains(person1));
+    }
+
+    @Test
+    public void testFindById() {
+        Person person1 = new Person(555, "Steve");
+        Person person2 = new Person(678, "Jack");
+
+        personList.add(person1);
+        personList.add(person2);
+
+        Person expected = person1;
+        Person actual = personList.findById(555);
+
+        Assert.assertEquals(expected, actual);
     }
 }
