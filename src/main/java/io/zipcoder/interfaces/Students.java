@@ -14,5 +14,5 @@ public class Students extends People<Student> {
     public static Students getInstance() {
         return INSTANCE;
     }
-
+    
 }

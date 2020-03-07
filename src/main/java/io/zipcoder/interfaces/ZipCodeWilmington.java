@@ -6,6 +6,13 @@ import java.util.Map;
 public class ZipCodeWilmington {
     private Students students = Students.getInstance();
     private Instructors instructors = Instructors.getInstance();
+    private final static ZipCodeWilmington INSTANCE = new ZipCodeWilmington();;
+
+    private ZipCodeWilmington(){}
+
+    public static ZipCodeWilmington getInstance(){
+        return INSTANCE;
+    }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
         teacher.lecture(students.getArray(), numberOfHours);
@@ -22,5 +29,9 @@ public class ZipCodeWilmington {
             map.put(s, s.getTotalStudyTime());
         }
         return map;
+    }
+
+    public Students getStudents() {
+        return students;
     }
 }
