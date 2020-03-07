@@ -15,7 +15,7 @@ public enum Educator implements Teacher {
         Instructors.getInstance().add(instructor);
         this.timeWorked = 0;
     }
-    
+
     @Override
     public void teach(Learner learner, double numberOfHours) {
         instructor.teach(learner, numberOfHours);
